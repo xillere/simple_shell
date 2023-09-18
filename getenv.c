@@ -29,7 +29,7 @@ char *_getenv(const char *name)
 
 int main()
 {
-	char *str = _getenv("PATH");
+	char *str = _getenv("LESSCLOSE\n");
 	
 	printf("%s",str);
 	return 0;
