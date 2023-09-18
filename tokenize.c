@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * tokenize - splits the string
- * @b: string to split
+ * tokenize - this splits the string
+ * @b: string to be split
  * @delim: object used to indicate where the split should take place
  * Return: split string
  **/
