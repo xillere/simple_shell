@@ -2,7 +2,8 @@
 
 int shell_loop()
 {
-	getinput();
+	char buff[BUFFER_SIZE];
+	getinput(buff);
 	splitintostr();
 	process();
 
