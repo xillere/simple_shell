@@ -31,7 +31,7 @@ char *_memset(char *s, char b, unsigned int n)
 char *_strcpy(char *dest, char *src)
 {
 	int len = 0, i;
-	
+
 	while (src[len] != '\0')
 		len++;
 
