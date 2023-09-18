@@ -15,7 +15,7 @@ char *_getenv(const char *name)
 	i = 0;
 	while (environ[i] != NULL)
 	{
-		if (strncmp(name, environ[i], _strlen(name)) == 0)
+		if (_strncmp(name, environ[i], _strlen(name)) == 0)
 		{
 			absvar = environ[i] + _strlen(name) + 1;
 			value = malloc(sizeof(char) * _strlen(absvar) + 1);
