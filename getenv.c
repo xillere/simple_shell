@@ -15,14 +15,22 @@ char *_getenv(const char *name)
 	i = 0;
 	while (environ[i] != NULL)
 	{
-		if (strncmp(name, environ[i], strlen(name)) == 0)
+		if (strncmp(name, environ[i], _strlen(name)) == 0)
 		{
-			absvar = environ[i] + strlen(name) + 1;
-			value = malloc(sizeof(char) * strlen(absvar) + 1);
-			strcpy(value, absvar);
+			absvar = environ[i] + _strlen(name) + 1;
+			value = malloc(sizeof(char) * _strlen(absvar) + 1);
+			_strcpy(value, absvar);
 			return (value);
 		}
 		i++;
 	}
 	return (NULL);
+}
+
+int main()
+{
+	char *str = _getenv("PATH");
+	
+	printf("%s",str);
+	return 0;
 }
