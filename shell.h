@@ -23,5 +23,6 @@ char *_memset(char *s, char b, unsigned int n);
 char *_which(char *fname);
 char **tokenize(char *str, char *delim);
 char *_getenv(const char *name);
+char *_strcpy(char *dest, char *src);
 
 #endif
