@@ -29,8 +29,8 @@ char *_getenv(const char *name)
 
 int main()
 {
-	char *str = _getenv("LESSCLOSE\n");
+	char *str = _getenv("LESSCLOSE");
 	
-	printf("%s",str);
+	printf("%s\n",str);
 	return 0;
 }
