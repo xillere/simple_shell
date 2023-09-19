@@ -47,7 +47,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 			{
 				if (execve(split[0], split, NULL) == -1)
 				{
-					perror("No such file or directory\n");
+					dprintf(STDERR_FILENO, "%s: 1: %s: not found\n", "./hsh", split[0]);
 				}
 				else
 				{
