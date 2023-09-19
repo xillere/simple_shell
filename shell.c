@@ -14,7 +14,6 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 	size_t len = 0;
 	int count;
 	pid_t cp;
-	struct stat st;
 	
 	buffer = NULL;
 
@@ -39,19 +38,16 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 			count++;
 		}
 		split[count] = NULL;
-		if (stat(split[0], &st) == 0)
+		cp = fork();
+		if (cp == 0)
 		{
-			cp = fork();
-			if (cp == 0)
+			if (execve(split[0], split, NULL) == -1)
 			{
-				if (execve(split[0], split, NULL) == -1)
-				{
-					dprintf(STDERR_FILENO, "%s: 1: %s: not found\n", "./hsh", split[0]);
-				}
-				else
-				{
-					wait(NULL);
-				}
+				perror("./hsh");
+			}
+			else
+			{
+				wait(NULL);
 			}
 		}	       	
 	}
