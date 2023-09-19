@@ -10,7 +10,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 {
 	ssize_t read;
 	char *buffer, *token;
-	char **split;
+	char *split[64];
 	size_t len = 0;
 	int count;
 	pid_t cp;
@@ -30,7 +30,6 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 		{
 			buffer[read - 1] = '\0';
 		}
-		split = malloc(sizeof(char *) * 64);
 		token = strtok(buffer, " ");
 		count = 0;
 		while (token != NULL)
@@ -52,10 +51,8 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 				else
 				{
 					wait(NULL);
-					free(split);
 				}
 			}
-			free(split);
 		}
 	       	
 	}
