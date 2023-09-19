@@ -10,7 +10,7 @@ char *_which(char *fname)
 {
 
 	char *path, *found;
-	char **paths, search[MAX_VALUE];
+	char **paths, search[2048];
 	int i;
 	struct stat st;
 	path = _getenv("PATH");
@@ -19,7 +19,7 @@ char *_which(char *fname)
 	i = 0;
 	while (paths[i] != NULL)
 	{
-		_memset(search, 0 ,MAX_VALUE);
+		_memset(search, 0 ,2048);
 		strcpy(search, paths[i]);
 		strcat(search, "/");
 		strcat(search, fname);

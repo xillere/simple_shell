@@ -9,10 +9,11 @@
 int main()
 {
 	ssize_t read;
-	char *buffer, *token, *tokencpy;
+	char *buffer, *token;
 	char **split;
 	size_t len = 0;
 	int count;
+	int i = 0;
 	
 	buffer = NULL;
 
