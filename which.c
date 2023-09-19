@@ -13,17 +13,17 @@ char *_which(char *fname)
 	char **paths, search[2048];
 	int i;
 	struct stat st;
-	path = _getenv("PATH");
 
+	path = _getenv("PATH");
 	paths = tokenize(path, ":");
 	i = 0;
 	while (paths[i] != NULL)
 	{
-		_memset(search, 0 ,2048);
+		_memset(search, 0, 2048);
 		strcpy(search, paths[i]);
 		strcat(search, "/");
 		strcat(search, fname);
-		if(stat(search, &st) == 0)
+		if (stat(search, &st) == 0)
 		{
 			found = malloc(sizeof(char) * strlen(search) + 1);
 			if (found == NULL)
@@ -40,7 +40,9 @@ char *_which(char *fname)
 			i++;
 		}
 	}
-	/*if (check = 1)
-		free2D(paths);*/
+	/*
+	 * if (check = 1)
+		free2D(paths);
+		*/
 	return (NULL);
 }
