@@ -53,8 +53,9 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 					wait(NULL);
 				}
 			}
-		}
-	       	
+		}	       	
 	}
+	free(buffer);
+
 	return 0;
 }
