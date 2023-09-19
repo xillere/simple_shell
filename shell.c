@@ -14,7 +14,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 	size_t len = 0;
 	int count;
 	pid_t cp;
-	
+
 	buffer = NULL;
 
 	while (1)
@@ -49,9 +49,9 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char
 			{
 				wait(NULL);
 			}
-		}	       	
+		}
 	}
 	free(buffer);
 
-	return 0;
+	return (0);
 }
