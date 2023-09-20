@@ -7,13 +7,10 @@
 
 int main(void)
 {
-	ssize_t read;
-	char *buffer, *token;
+	char buffer[1024], *token;
 	char *split[64];
 	int count;
 	pid_t cp;
-
-	buffer = NULL;
 
 	while (1)
 	{

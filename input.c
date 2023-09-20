@@ -10,6 +10,7 @@
 
 void input(char *string)
 {
+	ssize_t read;
 	char *buffer;
 	size_t len = 0;
 
@@ -25,4 +26,5 @@ void input(char *string)
 		buffer[read - 1] = '\0';
 	}
 	_strcpy(string, buffer);
+	free(buffer);
 }
