@@ -19,6 +19,8 @@
 
 extern char **environ;
 void getinput(char *str);
+void builtin(char **args);
+void freeArray(char **a);
 int _strlen(const char *s);
 int _strncmp(const char *s1, const char *s2, size_t n);
 int _strcmp(char *s1, char *s2);

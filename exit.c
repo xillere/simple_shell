@@ -9,10 +9,9 @@
 
 void built_exit(char **args)
 {
-	int status, i, check;
+	int status, check;
 
 	status = 0;
-	i = err;
 	if (args[1] != NULL)
 	{
 		status = atoi(args[1]);
@@ -29,11 +28,6 @@ void built_exit(char **args)
 	{
 		dprintf(STDERR_FILENO, "%s: 1: %s: Illegal number: %s\n",
 				"./hsh", args[0], args[1]);
-		freeArray(args);
-		exit(2);
-	}
-	if (i == 2)
-	{
 		freeArray(args);
 		exit(2);
 	}
