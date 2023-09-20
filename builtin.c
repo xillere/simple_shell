@@ -11,4 +11,8 @@ void builtin(char **args)
 	{
 		exit(atoi(args[1]));
 	}
+	if (strcmp(token, "env") == 0)
+	{
+		printenv(environ);
+	}
 }
