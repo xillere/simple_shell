@@ -25,9 +25,17 @@ void printenv(char **e)
 
 void builtin(char **args)
 {
+	int i;
+
 	if (_strcmp(args[0], "exit") == 0)
 	{
-		exit(atoi(args[1]));
+		i = 0;
+
+		if (args[1] != NULL)
+		{
+			i = atoi(args[1]);
+		}
+		exit(i);
 	}
 	if (_strcmp(args[0], "env") == 0)
 	{

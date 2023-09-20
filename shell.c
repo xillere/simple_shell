@@ -11,6 +11,7 @@ int main(void)
 	char *split[64];
 	int count;
 	pid_t cp;
+	struct stat st;
 
 	while (1)
 	{
@@ -25,16 +26,19 @@ int main(void)
 		}
 		split[count] = NULL;
 		builtin(split);
-		cp = fork();
-		if (cp == 0)
+		if (stat(split[0], &st) == 0)
 		{
-			if (execve(split[0], split, NULL) == -1)
+			cp = fork();
+			if (cp == 0)
 			{
-				perror("./hsh");
-			}
-			else
-			{
+				if (execve(split[0], split, NULL) == -1)
+				{
+					perror("./hsh");
+				}
+				else
+				{
 				wait(NULL);
+				}
 			}
 		}
 	}
