@@ -28,5 +28,6 @@ char **tokenize(char *str, char *delim);
 char *_getenv(const char *name);
 char *_strcpy(char *dest, char *src);
 int shell_loop();
+void input(char *string);
 
 #endif

@@ -10,7 +10,6 @@ int main(void)
 	ssize_t read;
 	char *buffer, *token;
 	char *split[64];
-	size_t len = 0;
 	int count;
 	pid_t cp;
 
@@ -18,16 +17,7 @@ int main(void)
 
 	while (1)
 	{
-		read = getline(&buffer, &len, stdin);
-		if (read == -1)
-		{
-			free(buffer);
-			exit(0);
-		}
-		if (buffer[read - 1] == '\n')
-		{
-			buffer[read - 1] = '\0';
-		}
+		input(buffer);
 		token = strtok(buffer, " ");
 		count = 0;
 		while (token != NULL)
