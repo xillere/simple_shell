@@ -24,6 +24,7 @@ int main(void)
 			count++;
 		}
 		split[count] = NULL;
+		builtin(split);
 		cp = fork();
 		if (cp == 0)
 		{

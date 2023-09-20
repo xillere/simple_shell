@@ -13,6 +13,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 #define BUFFER_SIZE 1024
 
@@ -28,5 +29,6 @@ char **tokenize(char *str, char *delim);
 char *_getenv(const char *name);
 char *_strcpy(char *dest, char *src);
 void input(char *string);
+void built_exit(char **args);
 
 #endif
