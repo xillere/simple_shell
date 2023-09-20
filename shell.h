@@ -32,5 +32,6 @@ char *_getenv(const char *name);
 char *_strcpy(char *dest, char *src);
 void input(char *string);
 void built_exit(char **args);
+void printenv(char **e);
 
 #endif

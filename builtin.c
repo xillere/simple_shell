@@ -1,4 +1,22 @@
 #include "shell.h"
+
+/**
+ * printenv - builtin env func
+ * @e: environment variable
+ * Return: NULL
+ **/
+
+void printenv(char **e)
+{
+	int i = 0;
+
+	while (e[i] != NULL)
+	{
+		printf("%s\n", e[i]);
+		i++;
+	}
+}
+
 /**
  * builtin - builtins
  * @args: arguments
@@ -11,7 +29,7 @@ void builtin(char **args)
 	{
 		exit(atoi(args[1]));
 	}
-	if (strcmp(token, "env") == 0)
+	if (_strcmp(args[0], "env") == 0)
 	{
 		printenv(environ);
 	}
