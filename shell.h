@@ -16,6 +16,7 @@
 
 #define BUFFER_SIZE 1024
 
+extern char **environ;
 void getinput(char *str);
 int _strlen(const char *s);
 int _strncmp(const char *s1, const char *s2, size_t n);

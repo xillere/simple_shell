@@ -2,11 +2,10 @@
 
 /**
  * main - shell
- *
  * Return: 0 on success
  **/
 
-int main(int ac __attribute__((unused)), char **av __attribute__((unused)), char **env __attribute__((unused)))
+int main(void)
 {
 	ssize_t read;
 	char *buffer, *token;

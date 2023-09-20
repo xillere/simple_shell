@@ -1,6 +1,5 @@
 #include "shell.h"
 
-extern char **environ;
 /**
  * _getenv - prints the environment
  * @name: string
